@@ -1,21 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+import { ITodo } from "./src/interfaces/todo.interface";
+import { Header } from "./src/components/header/Header";
+import { TodosForm } from "./src/components/TodosForm/TodosForm";
+import { TodosContainer } from "./src/components/TodosContainer/TodosContainer";
 
-export default function App() {
+const App: React.FC = () => {
+
+  const [ todos, setTodos ] = useState<ITodo[] | any>([]);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+    <Header />
+    <TodosForm setTodos={setTodos}/>
+    <TodosContainer todoList={todos} setTodos={setTodos} />
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
