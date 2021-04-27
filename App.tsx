@@ -3,6 +3,7 @@ import { ITodo } from "./src/interfaces/todo.interface";
 import { Header } from "./src/components/header/Header";
 import { TodosForm } from "./src/components/TodosForm/TodosForm";
 import { TodosContainer } from "./src/components/TodosContainer/TodosContainer";
+import { TodoHelper } from "./src/helpers/todo.helper";
 
 const App: React.FC = () => {
 
